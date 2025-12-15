@@ -1,10 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Greeting from "../components/Greeting";
-const pageTitle = "Blog Test";
+import Hero from "../components/home/Hero.astro";
+const pageTitle = "Jesse Firestone";
 ---
 
 <MainLayout pageTitle={pageTitle}>
+  <Hero />
   <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 </MainLayout>
