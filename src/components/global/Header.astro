@@ -1,0 +1,30 @@
+---
+import Navigation from "../global/Navigation.astro";
+---
+
+<style lang="scss">
+  @use "../../styles/all" as *;
+
+  header {
+    width: 90%;
+    z-index: 10;
+    margin: 2% auto;
+    border-radius: 10px;
+    background-color: $white;
+    position: sticky;
+    top: 30px;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      height: 6vh;
+    }
+  }
+</style>
+
+<header>
+  <nav>
+    <div></div>
+    <Navigation />
+  </nav>
+</header>
