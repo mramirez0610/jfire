@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/hero/Hero.astro";
 import BlogPost from "../components/BlogPost.astro";
 const allPosts = Object.values(
   import.meta.glob("./posts/*.md", { eager: true })
@@ -8,8 +9,18 @@ const pageTitle = "Blog";
 ---
 
 <MainLayout pageTitle={pageTitle}>
+  <Hero
+    heroImage="/imgs/blog.jpg"
+    headerTop="The"
+    headerBottom="Blog"
+    subHeader="Thoughts on climbing and progression."
+    actions={[
+      { href: "#posts", label: "All Posts" },
+      { href: "/about", label: "About Me" },
+    ]}
+  />
   <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
+  <ul id="posts">
     {
       allPosts.map((post: any) => (
         <BlogPost title={post.frontmatter.title} url={post.url} />

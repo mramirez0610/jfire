@@ -1,0 +1,72 @@
+---
+import HeroImage from "./HeroImage.astro";
+import HeroButtons from "./HeroButtons.astro";
+
+const {
+  heroImage,
+  headerTop,
+  headerBottom,
+  subHeader,
+  actions = [],
+} = Astro.props;
+---
+
+<style lang="scss">
+  @use "../../styles/all" as *;
+
+  .hero {
+    height: 100vh;
+    color: $white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: -13vh;
+
+    .hero-content {
+      position: relative;
+      min-width: 40%;
+      margin-left: 5%;
+      //   border: 1px solid black;
+
+      .hero-header {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 10ch;
+          letter-spacing: 0.05em;
+          line-height: 0.95;
+        }
+        h1:nth-child(2) {
+          align-self: flex-end;
+          transform: translateX(0.4em);
+        }
+      }
+
+      .hero-subHeader {
+        h2 {
+          font-style: italic;
+          font-weight: 700;
+          //   font-weight: 400;
+        }
+      }
+    }
+  }
+</style>
+
+<header class="hero">
+  <HeroImage heroImage={heroImage} />
+  <section class="hero-content">
+    <div class="hero-header">
+      <h1>{headerTop}</h1>
+      <h1>{headerBottom}</h1>
+    </div>
+
+    <div class="hero-subHeader">
+      <h2>{subHeader}</h2>
+    </div>
+
+    <HeroButtons buttonActions={actions} />
+  </section>
+</header>

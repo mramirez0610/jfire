@@ -1,10 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Hero from "../components/home/Hero.astro";
+// import Hero from "../components/home/Hero.astro";
+import Hero from "../components/hero/Hero.astro";
 const pageTitle = "Jesse Firestone";
 ---
 
 <MainLayout pageTitle={pageTitle}>
-  <Hero />
+  <Hero
+    heroImage="/imgs/hero.jpg"
+    headerTop="Jesse"
+    headerBottom="Firestone"
+    subHeader="Climbing Progression, For Everyone."
+    actions={[
+      { href: "/coaching", label: "Coaching" },
+      { href: "/blog", label: "Blog" },
+    ]}
+  />
+
   <h2>My awesome blog subtitle</h2>
 </MainLayout>
