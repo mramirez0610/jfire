@@ -21,6 +21,7 @@ p {
 
 html {
   background-color: $black;
+  // background-color: $white;
 }
 
 body {
@@ -31,4 +32,8 @@ body {
 
 h1 {
   font-family: $header-font;
+}
+
+:has(.mobile-button[aria-expanded="true"]) .mobile-nav {
+  display: none;
 }

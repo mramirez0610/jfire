@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<style lang="scss">
+  @use "../../styles/all" as *;
+
+  .mobile-button {
+    position: relative;
+    display: none;
+
+    border: none;
+    color: $black;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-button {
+      display: block;
+      z-index: 11;
+    }
+  }
+</style>
+
+<div>
+  <button aria-expanded="false" aria-controls="nav" class="mobile-button">
+    <Icon name="gg:menu" />
+  </button>
+  <script>
+    import "../../scripts/menu";
+  </script>
+</div>

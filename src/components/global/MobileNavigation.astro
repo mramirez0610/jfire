@@ -14,7 +14,7 @@ const isActive = (href: string) =>
   currentPath === href || currentPath === href.replace(/\/$/, "");
 ---
 
-<nav id="nav" class="nav">
+<nav id="mobile-nav" class="mobile-nav">
   {
     links.map((link) => (
       <a
@@ -30,14 +30,24 @@ const isActive = (href: string) =>
 
 <style lang="scss">
   @use "../../styles/all" as *;
-  .nav {
-    min-width: 50%;
-    height: auto;
+  .mobile-nav {
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+
+    // min-width: 50%;
+    // height: auto;
+
+    background-color: red;
+    z-index: 10;
     gap: 2vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 4vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
 
     a {
       text-decoration: none;
@@ -55,10 +65,13 @@ const isActive = (href: string) =>
   }
 
   @media (max-width: 768px) {
-    .nav {
-      visibility: hidden;
-      pointer-events: none;
-      display: none;
+    .mobile-nav {
+      visibility: visible;
+      pointer-events: all;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
