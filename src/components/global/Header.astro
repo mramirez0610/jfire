@@ -7,9 +7,9 @@ import MobileButton from "./MobileButton.astro";
 <style lang="scss">
   @use "../../styles/all" as *;
 
-  header {
+  .header {
     width: clamp(320px, 90vw, 900px);
-    z-index: 10;
+    z-index: 11;
     margin: 2% auto;
     border-radius: 10px;
     // height: 6vh;
@@ -21,6 +21,8 @@ import MobileButton from "./MobileButton.astro";
     div {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      padding: 0 1em;
       height: 6vh;
     }
   }
@@ -36,11 +38,23 @@ import MobileButton from "./MobileButton.astro";
   }
 </style>
 
-<header>
+<>
+  <header class="header">
+    <div>
+      <div></div>
+      <MobileButton />
+
+      <Navigation />
+    </div>
+  </header>
+  <MobileNavigation />
+</>
+
+<!-- <header class="header">
   <div>
     <div></div>
     <MobileButton />
     <MobileNavigation />
     <Navigation />
   </div>
-</header>
+</header> -->

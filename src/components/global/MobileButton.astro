@@ -18,16 +18,18 @@ import { Icon } from "astro-icon/components";
   @media (max-width: 768px) {
     .mobile-button {
       display: block;
-      z-index: 11;
+      z-index: 12;
     }
   }
 </style>
 
-<div>
-  <button aria-expanded="false" aria-controls="nav" class="mobile-button">
-    <Icon name="gg:menu" />
-  </button>
-  <script>
-    import "../../scripts/menu";
-  </script>
-</div>
+<!-- <button aria-expanded="false" aria-controls="nav" class="mobile-button">
+  <Icon name="gg:menu" />
+</button> -->
+
+<Icon
+  name="gg:menu"
+  aria-expanded="false"
+  aria-controls="nav"
+  class="mobile-button"
+/>

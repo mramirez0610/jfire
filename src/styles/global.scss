@@ -35,5 +35,9 @@ h1 {
 }
 
 :has(.mobile-button[aria-expanded="true"]) .mobile-nav {
-  display: none;
+  display: flex;
 }
+
+// :has(.mobile-button[aria-expanded="true"]) .mobile-button {
+//   color: $black;
+// }
