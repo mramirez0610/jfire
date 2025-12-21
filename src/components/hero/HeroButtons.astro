@@ -10,8 +10,8 @@ const { buttonActions } = Astro.props;
   @use "../../styles/all" as *;
   .hero-buttons {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: flex-start;
+    width: 100%;
 
     a {
       button {
@@ -38,7 +38,6 @@ const { buttonActions } = Astro.props;
 
         // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-        // Uncomment for a subtler outline hover instead of the fill animation above.
         transition:
           box-shadow 300ms ease-in-out,
           color 300ms ease-in-out;
@@ -52,6 +51,24 @@ const { buttonActions } = Astro.props;
 
     a:nth-child(1) {
       margin-right: 10%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 2vh;
+
+      a {
+        button {
+          width: 175px;
+        }
+      }
+
+      a:nth-child(1) {
+        margin-right: 0;
+      }
     }
   }
 </style>

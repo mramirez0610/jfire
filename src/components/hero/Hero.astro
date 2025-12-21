@@ -15,12 +15,37 @@ const {
   @use "../../styles/all" as *;
 
   .hero {
-    height: 100vh;
+    // position: relative;
+
+    min-height: 90vh;
+    min-height: 100vh;
+    z-index: 0;
+
+    width: 100vw;
     color: $white;
     display: flex;
     align-items: center;
-    position: relative;
-    margin-top: -13vh;
+    margin-top: -8vh;
+
+    // margin-top: -13vh;
+    // background-color: red;
+    // border-bottom: 1px solid red;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.15)
+      );
+      z-index: -1;
+    }
 
     .hero-content {
       position: relative;
@@ -34,7 +59,8 @@ const {
         flex-direction: column;
 
         h1 {
-          font-size: 10ch;
+          //   font-size: 10ch;
+          font-size: clamp(6ch, 10ch, 12ch);
           letter-spacing: 0.05em;
           line-height: 0.95;
         }
@@ -45,10 +71,36 @@ const {
       }
 
       .hero-subHeader {
+        width: 100%;
         h2 {
           font-style: italic;
-          font-weight: 700;
-          //   font-weight: 400;
+          //   font-weight: 700;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      justify-content: center;
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+
+        .hero-header {
+          align-items: center;
+
+          h1:nth-child(2) {
+            align-self: center;
+            transform: translateX(0);
+          }
+        }
+
+        .hero-subHeader {
+          padding: 1em 2em;
         }
       }
     }

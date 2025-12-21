@@ -5,28 +5,16 @@ const { heroImage } = Astro.props;
 <style lang="scss">
   .hero-image {
     position: absolute;
+    min-width: 100vw;
+    // min-height: 100vh;
+    min-height: 90vh;
+
     inset: 0;
     z-index: -2;
 
-    /* &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.15)
-      );
-      z-index: -1;
-    } */
-
     img {
       width: 100vw;
-      transform: scale(1.08); // gentle zoom-in
+      //   transform: scale(1.08); // gentle zoom-in
 
       height: 100vh;
       vertical-align: middle;
