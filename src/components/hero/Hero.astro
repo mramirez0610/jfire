@@ -1,6 +1,7 @@
 ---
 import HeroImage from "./HeroImage.astro";
 import HeroButtons from "./HeroButtons.astro";
+import HeroIsland from "./HeroIsland";
 
 const {
   heroImage,
@@ -16,20 +17,14 @@ const {
 
   .hero {
     // position: relative;
-
-    min-height: 90vh;
+    // min-height: 90vh;
+    width: 100vw;
     min-height: 100vh;
     z-index: 0;
-
-    width: 100vw;
     color: $white;
     display: flex;
     align-items: center;
     margin-top: -8vh;
-
-    // margin-top: -13vh;
-    // background-color: red;
-    // border-bottom: 1px solid red;
 
     &::after {
       content: "";
@@ -52,32 +47,6 @@ const {
       min-width: 40%;
       margin-left: 5%;
       //   border: 1px solid black;
-
-      .hero-header {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-
-        h1 {
-          //   font-size: 10ch;
-          font-size: clamp(6ch, 10ch, 12ch);
-          letter-spacing: 0.05em;
-          line-height: 0.95;
-        }
-        h1:nth-child(2) {
-          align-self: flex-end;
-          transform: translateX(0.4em);
-        }
-      }
-
-      .hero-subHeader {
-        width: 100%;
-        h2 {
-          font-style: italic;
-          //   font-weight: 700;
-          font-weight: 400;
-        }
-      }
     }
   }
 
@@ -89,19 +58,6 @@ const {
         flex-direction: column;
         align-items: center;
         margin-left: 0;
-
-        .hero-header {
-          align-items: center;
-
-          h1:nth-child(2) {
-            align-self: center;
-            transform: translateX(0);
-          }
-        }
-
-        .hero-subHeader {
-          padding: 1em 2em;
-        }
       }
     }
   }
@@ -110,15 +66,12 @@ const {
 <header class="hero">
   <HeroImage heroImage={heroImage} />
   <section class="hero-content">
-    <div class="hero-header">
-      <h1>{headerTop}</h1>
-      <h1>{headerBottom}</h1>
-    </div>
-
-    <div class="hero-subHeader">
-      <h2>{subHeader}</h2>
-    </div>
-
-    <HeroButtons buttonActions={actions} />
+    <HeroIsland
+      client:visible
+      headerTop={headerTop}
+      headerBottom={headerBottom}
+      subHeader={subHeader}
+      buttonActions={actions}
+    />
   </section>
 </header>
