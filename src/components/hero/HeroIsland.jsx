@@ -40,14 +40,27 @@ export default function HeroIsland({
         duration: 0.8,
         ease: "power3.out",
       });
+
+      gsap.to(`.${styles.heroButtons}`, {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+      });
     });
 
     return () => ctx.revert();
   }, []);
 
+  const headerClass =
+    headerTop === "Jesse"
+      ? `${styles.heroHeader} ${styles.homeHeroHeader}`
+      : styles.heroHeader;
+
   return (
     <section className={styles.heroIsland}>
-      <div ref={root} className={styles.heroHeader}>
+      <div ref={root} className={headerClass}>
         <h1>{headerTop}</h1>
         <h1>{headerBottom}</h1>
       </div>
