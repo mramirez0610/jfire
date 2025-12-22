@@ -35,7 +35,7 @@ h1 {
 }
 
 :has(.mobile-button[aria-expanded="true"]) .mobile-nav {
-  display: flex;
+  display: block;
 }
 
 // :has(.mobile-button[aria-expanded="true"]) .mobile-button {

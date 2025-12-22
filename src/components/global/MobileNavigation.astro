@@ -6,27 +6,15 @@ const links = [
   { href: "/coaching/", label: "Coaching" },
   { href: "/merch/", label: "Merch" },
   { href: "/innerFire/", label: "Inner Fire" },
-  { href: "/tags/", label: "Tags" },
-  { href: "/about/", label: "About" },
+  //nest tags under blog
+  //   { href: "/tags/", label: "Tags" },
+  //delete about
+  //   { href: "/about/", label: "About" },
 ];
 
 const isActive = (href: string) =>
   currentPath === href || currentPath === href.replace(/\/$/, "");
 ---
-
-<nav id="mobile-nav" class="mobile-nav">
-  {
-    links.map((link) => (
-      <a
-        href={link.href}
-        class={isActive(link.href) ? "active" : ""}
-        aria-current={isActive(link.href) ? "page" : undefined}
-      >
-        {link.label}
-      </a>
-    ))
-  }
-</nav>
 
 <style lang="scss">
   @use "../../styles/all" as *;
@@ -34,33 +22,43 @@ const isActive = (href: string) =>
     visibility: hidden;
     pointer-events: none;
     display: none;
-
-    // min-width: 50%;
-    // height: auto;
-
-    background-color: $black;
+    background-color: $orange;
     z-index: 10;
     gap: 2vw;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    flex-direction: column;
 
-    a {
-      text-decoration: none;
-      color: $black;
+    .mobile-links {
+      margin: 0 auto;
+      width: 85%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
 
-      background-color: $white;
-      padding: 0.35rem 1rem;
-      border-radius: 5px;
-    }
+      h1 {
+        color: $white;
+        font-size: 8ch;
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+      }
 
-    a.active {
-      font-weight: 700;
-      box-shadow: 0 0 0 2px $black inset;
+      a {
+        text-decoration: none;
+        color: $white;
+        padding: 0.35rem 1rem;
+        font-size: 4ch;
+        border-radius: 5px;
+      }
+
+      a.active {
+        font-weight: 700;
+        box-shadow: 0 0 0 2px $white inset;
+      }
     }
   }
 
@@ -68,10 +66,24 @@ const isActive = (href: string) =>
     .mobile-nav {
       visibility: visible;
       pointer-events: all;
-
       display: none;
-      justify-content: center;
-      align-items: center;
     }
   }
 </style>
+
+<section id="mobile-nav" class="mobile-nav">
+  <nav class="mobile-links">
+    <h1>where to?</h1>
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class={isActive(link.href) ? "active" : ""}
+          aria-current={isActive(link.href) ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</section>

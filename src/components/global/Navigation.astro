@@ -6,27 +6,15 @@ const links = [
   { href: "/coaching/", label: "Coaching" },
   { href: "/merch/", label: "Merch" },
   { href: "/innerFire/", label: "Inner Fire" },
-  { href: "/tags/", label: "Tags" },
-  { href: "/about/", label: "About" },
+  //nest tags under blog
+  //   { href: "/tags/", label: "Tags" },
+  //delete about
+  //   { href: "/about/", label: "About" },
 ];
 
 const isActive = (href: string) =>
   currentPath === href || currentPath === href.replace(/\/$/, "");
 ---
-
-<nav id="nav" class="nav">
-  {
-    links.map((link) => (
-      <a
-        href={link.href}
-        class={isActive(link.href) ? "active" : ""}
-        aria-current={isActive(link.href) ? "page" : undefined}
-      >
-        {link.label}
-      </a>
-    ))
-  }
-</nav>
 
 <style lang="scss">
   @use "../../styles/all" as *;
@@ -41,7 +29,7 @@ const isActive = (href: string) =>
 
     a {
       text-decoration: none;
-      color: $black;
+      color: $orange;
 
       background-color: $white;
       padding: 0.35rem 1rem;
@@ -62,3 +50,17 @@ const isActive = (href: string) =>
     }
   }
 </style>
+
+<nav id="nav" class="nav">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        class={isActive(link.href) ? "active" : ""}
+        aria-current={isActive(link.href) ? "page" : undefined}
+      >
+        {link.label}
+      </a>
+    ))
+  }
+</nav>
