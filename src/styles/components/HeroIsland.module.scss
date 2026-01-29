@@ -1,21 +1,8 @@
 @use "../all" as *;
 
 .heroIsland {
-  .homeHeroHeader {
-    h1:nth-child(2) {
-      align-self: flex-end;
-      transform: translateX(0.4em);
-    }
-    @media (max-width: 768px) {
-      h1:nth-child(2) {
-        align-self: center;
-        transform: translateX(0);
-      }
-    }
-  }
-
   .heroHeader {
-    width: 70%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     opacity: 1;
@@ -29,9 +16,19 @@
       opacity: 0;
     }
 
+    h1:nth-child(2) {
+      align-self: flex-end;
+      transform: translateX(0.1em);
+    }
+
     @media (max-width: 768px) {
       align-items: center;
       width: 100%;
+
+      h1:nth-child(2) {
+        align-self: center;
+        transform: translateX(0);
+      }
     }
   }
 
@@ -47,6 +44,21 @@
 
     @media (max-width: 768px) {
       padding: 1em 2em;
+    }
+  }
+
+  .homeHeroHeader {
+    width: 70%;
+    h1:nth-child(2) {
+      align-self: flex-end;
+      transform: translateX(0.4em);
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      h1:nth-child(2) {
+        align-self: center;
+        transform: translateX(0);
+      }
     }
   }
 
@@ -66,27 +78,23 @@
         border-radius: 10px;
         font-weight: 400;
 
-        &:hover {
-          box-shadow: 0 0 40px 40px $white inset;
-          // box-shadow: inset 30em 0 $white;
-          color: $black;
-        }
-
         border: 1px solid rgba($color: $white, $alpha: 0.75);
-        box-shadow: inset 0 0 $white;
         color: $white;
-        background: rgba($color: $white, $alpha: 0.15);
-        backdrop-filter: blur(8px);
+        // background: rgba($color: $white, $alpha: 0.15);
+        background: rgba($color: $black, $alpha: 0.45);
+
+        // backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-        // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-        // &:hover {
-        //   box-shadow: 0 0 0 2px rgba($color: $white, $alpha: 0.65);
-        //   background: rgba($color: $white, $alpha: 0.8);
-        //   color: $white;
-        // }
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out,
+          font-weight 300ms ease-in-out;
+        &:hover {
+          box-shadow: 0 0 0 2px rgba($color: $white, $alpha: 0.65);
+          background: rgba($color: $white, $alpha: 0.8);
+          color: $orange;
+          font-weight: 500;
+        }
       }
     }
 
