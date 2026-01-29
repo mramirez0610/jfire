@@ -1,5 +1,6 @@
 ---
 const { heroImage } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <style lang="scss">
@@ -8,14 +9,11 @@ const { heroImage } = Astro.props;
     min-width: 100vw;
     // min-height: 100vh;
     min-height: 90vh;
-
     inset: 0;
     z-index: -2;
 
     img {
       width: 100vw;
-      //   transform: scale(1.08); // gentle zoom-in
-
       height: 100vh;
       vertical-align: middle;
       font-style: italic;
@@ -23,7 +21,6 @@ const { heroImage } = Astro.props;
       background-size: cover;
       shape-margin: 1rem;
       object-fit: cover;
-
       object-position: center;
       background-attachment: fixed;
       background-position: center;
@@ -32,5 +29,15 @@ const { heroImage } = Astro.props;
 </style>
 
 <section class="hero-image">
-  <img src={heroImage} alt="hero banner" />
+  <Image
+    src={heroImage}
+    alt="Hero Banner"
+    width="1920"
+    height="1080"
+    quality={100}
+    format="jpg"
+    sizes="(min-width: 1080px) 100vw"
+    widths={[1920]}
+  />
+  <!-- <img src={heroImage} alt="hero banner" /> -->
 </section>
