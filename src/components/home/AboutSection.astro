@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { Picture } from "astro:assets";
 import Button from "../global/Button.astro";
 ---
 
@@ -8,9 +7,7 @@ import Button from "../global/Button.astro";
   @use "../../styles/all" as *;
 
   .aboutSection {
-    // width: 100vw;
-    width: 100%;
-
+    width: 100vw;
     display: flex;
     // align-items: center;
     justify-content: center;
@@ -23,6 +20,15 @@ import Button from "../global/Button.astro";
 
       h1 {
         font-size: 5ch;
+        letter-spacing: 0.02em;
+
+        &::after {
+          content: "";
+          width: 80%;
+          display: block;
+          background-color: $orange;
+          height: 0.5vh;
+        }
       }
       p {
         width: 80%;
@@ -32,6 +38,7 @@ import Button from "../global/Button.astro";
 
     .imageContainer {
       width: 40vw;
+
       img {
         width: 100%;
         height: auto;
@@ -56,23 +63,34 @@ import Button from "../global/Button.astro";
       flex-direction: column-reverse;
       justify-content: center;
       align-items: center;
+      gap: 1.5vh;
+      margin-top: 4%;
 
       .aboutContainer {
         width: 80vw;
 
         h1 {
-          text-align: center;
+          // text-align: center;
+
+          &::after {
+            // width: 100%;
+          }
         }
 
         p {
           text-align: left;
           align-self: center;
-          width: 80vw;
+          width: 70vw;
         }
       }
 
       .imageContainer {
         width: 100vw;
+
+        img {
+          margin: 0 auto;
+          width: 80%;
+        }
       }
     }
   }
