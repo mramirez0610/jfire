@@ -10,7 +10,7 @@
     //   transform: translateY(40px);
 
     h1 {
-      font-size: clamp(6ch, 10ch, 12ch);
+      font-size: clamp(6ch, 8.5ch, 10ch);
       letter-spacing: 0.05em;
       line-height: 0.95;
       opacity: 0;
@@ -68,54 +68,10 @@
     width: 100%;
     opacity: 0;
 
-    a {
-      button {
-        font: inherit;
-        padding: 0.75em 2em;
-        min-width: 10vw;
-        font-size: 2ch;
-        cursor: pointer;
-        border-radius: 10px;
-        font-weight: 400;
-
-        border: 1px solid rgba($color: $white, $alpha: 0.75);
-        color: $white;
-        // background: rgba($color: $white, $alpha: 0.15);
-        background: rgba($color: $black, $alpha: 0.45);
-
-        // backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out,
-          font-weight 300ms ease-in-out;
-        &:hover {
-          box-shadow: 0 0 0 2px rgba($color: $white, $alpha: 0.65);
-          background: rgba($color: $white, $alpha: 0.8);
-          color: $orange;
-          font-weight: 500;
-        }
-      }
-    }
-
-    a:nth-child(1) {
-      margin-right: 10%;
-    }
-
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
       gap: 2vh;
-
-      a {
-        button {
-          width: 175px;
-        }
-      }
-
-      a:nth-child(1) {
-        margin-right: 0;
-      }
     }
   }
 }

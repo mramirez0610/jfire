@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Button from "../global/Button.astro";
+import Button from "../global/Button";
 ---
 
 <style lang="scss">
@@ -12,6 +12,8 @@ import Button from "../global/Button.astro";
     // align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-top: 2%;
+    margin-bottom: 6%;
 
     .aboutContainer {
       color: $white;
@@ -30,9 +32,17 @@ import Button from "../global/Button.astro";
           height: 0.5vh;
         }
       }
+
       p {
         width: 80%;
         line-height: 1.6;
+        text-indent: 5%;
+      }
+
+      .callToAction {
+        width: 80%;
+        display: flex;
+        justify-content: center;
       }
     }
 
@@ -64,10 +74,10 @@ import Button from "../global/Button.astro";
       justify-content: center;
       align-items: center;
       gap: 1.5vh;
-      margin-top: 4%;
+      margin-top: 10%;
 
       .aboutContainer {
-        width: 80vw;
+        width: 85vw;
 
         h1 {
           // text-align: center;
@@ -80,7 +90,11 @@ import Button from "../global/Button.astro";
         p {
           text-align: left;
           align-self: center;
-          width: 70vw;
+          width: auto;
+        }
+
+        .callToAction {
+          width: 100%;
         }
       }
 
@@ -118,8 +132,7 @@ import Button from "../global/Button.astro";
       help you cut through the noise and figure out what to do with your
       climbing.
     </p>
-    <Button cta="Learn More" link="/coaching">
-      <!-- <p>
+    <!-- <p>
       You can work with me on an 8 or 12-week basis. These are offered through
       Camp 4 Human Performance. I also offer a 4 hour technique and tactics
       course. The course lays out the underlying principles behind good problem
@@ -127,7 +140,10 @@ import Button from "../global/Button.astro";
       practical takeaways, drills, and cheat sheets to connect the course
       materials to everyday practice.
     </p> -->
-    </Button>
+
+    <div class="callToAction">
+      <Button label="Let's Get Started!" href="/coaching" />
+    </div>
   </section>
   <section class="imageContainer">
     <Image

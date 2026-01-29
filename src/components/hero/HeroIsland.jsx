@@ -1,5 +1,6 @@
 import * as styles from "../../styles/components/HeroIsland.module.scss";
 import { useLayoutEffect, useRef } from "preact/hooks";
+import Button from "../global/Button";
 import gsap from "gsap";
 
 export default function HeroIsland({
@@ -71,9 +72,7 @@ export default function HeroIsland({
 
       <div className={styles.heroButtons}>
         {buttonActions.map(({ href, label }) => (
-          <a className={styles.button} href={href}>
-            <button> {label}</button>
-          </a>
+          <Button href={href} label={label} />
         ))}
       </div>
     </section>
