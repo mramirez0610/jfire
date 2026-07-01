@@ -7,11 +7,21 @@ import Social from "./Social.astro";
 
   footer {
     width: 100vw;
-    height: 20vh;
-    background-color: $white;
+    height: 40vh;
+    background-color: $orange;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h1 {
+      color: $white;
+      font-size: 4ch;
+    }
   }
 </style>
 
 <footer>
+  <h1>get in touch with me:</h1>
   <Social platform="youtube" username="astrodotbuild" />
 </footer>
