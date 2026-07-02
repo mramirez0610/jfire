@@ -17,21 +17,22 @@ const {
   .hero {
     // position: relative;
     // min-height: 90vh;
-    width: 100vw;
-
+    // width: 100vw;
+    width: 100%;
     min-height: 100vh;
     z-index: 0;
     color: $white;
     display: flex;
     align-items: center;
     margin-top: -8vh;
+    overflow: hidden;
 
     &::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
+      // width: 100vw;
       height: 100vh;
       inset: 0;
       background: linear-gradient(

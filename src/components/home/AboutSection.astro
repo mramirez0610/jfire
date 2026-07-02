@@ -7,9 +7,8 @@ import Button from "../global/Button";
   @use "../../styles/all" as *;
 
   .aboutSection {
-    width: 100vw;
+    width: 100%;
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-direction: row;
     margin-top: 2%;
@@ -139,7 +138,7 @@ import Button from "../global/Button";
 
         &::before {
           width: 80%;
-          top: -10px;
+          // top: -10px;
           left: 10%;
         }
 
@@ -166,12 +165,12 @@ import Button from "../global/Button";
       Hi! I&#39;m Jesse, a climber, developer, training geek, and climbing
       philosopher. One time, my friends started calling me J-Fire, for better or
       worse. I started climbing in 2007, in a humble converted racquetball court
-      at my university. I remember those days well. I was instantly hooked on
-      the joy and simplicity of the movement. It&#39;s not an understatement to
-      say that climbing changed my life. And what makes climbing so incredible
-      is the number of people I meet out at the crag who feel the same way.
-      It&#39;s both obvious and yet baffling how something so elegantly simple
-      can have such a profound impact on all kinds of different people.
+      at my university. I was instantly hooked on the joy and simplicity of the
+      movement. It&#39;s not an understatement to say that climbing changed my
+      life. And what makes climbing so incredible is the number of people I meet
+      out at the crag who feel the same way. It&#39;s both obvious and yet
+      baffling how something so elegantly simple can have such a profound impact
+      on all kinds of different people.
     </p>
     <p>
       Not sure where your climbing is going? Overwhelmed by a thousand instagram
@@ -221,7 +220,7 @@ import Button from "../global/Button";
           }
         });
       },
-      { threshold: 1 }
+      { threshold: 1 },
     );
     io.observe(el);
   }
