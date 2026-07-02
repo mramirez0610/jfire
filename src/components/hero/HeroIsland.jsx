@@ -31,7 +31,7 @@ export default function HeroIsland({
           ease: "power3.out",
           stagger: 0.12,
         },
-        root
+        root,
       );
 
       gsap.to(`.${styles.heroSubHeader}`, {
@@ -49,6 +49,14 @@ export default function HeroIsland({
         duration: 0.8,
         ease: "power3.out",
       });
+
+      gsap.to(`.${styles.test}`, {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+      });
     });
 
     return () => ctx.revert();
@@ -60,21 +68,32 @@ export default function HeroIsland({
       : styles.heroHeader;
 
   return (
-    <section className={styles.heroIsland}>
-      <div ref={root} className={headerClass}>
+    <>
+      <div className={styles.test}>
         <h1>{headerTop}</h1>
         <h1>{headerBottom}</h1>
       </div>
+      <section className={styles.heroIsland}>
+        {/* <div className={styles.test}>
+          <h1>{headerTop}</h1>
+          <h1>{headerBottom}</h1>
+        </div> */}
 
-      <div className={styles.heroSubHeader}>
-        <h2>{subHeader}</h2>
-      </div>
+        <div ref={root} className={headerClass}>
+          <h1>{headerTop}</h1>
+          <h1>{headerBottom}</h1>
+        </div>
 
-      <div className={styles.heroButtons}>
-        {buttonActions.map(({ href, label }) => (
-          <Button href={href} label={label} />
-        ))}
-      </div>
-    </section>
+        <div className={styles.heroSubHeader}>
+          <h2>{subHeader}</h2>
+        </div>
+
+        <div className={styles.heroButtons}>
+          {buttonActions.map(({ href, label }) => (
+            <Button href={href} label={label} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
